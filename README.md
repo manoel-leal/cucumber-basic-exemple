@@ -68,5 +68,14 @@ public class Runner {
 	
 }
 
-
 ```
+
+# Regex
+
+Regular Expression is a String pattern for generic expressions, example:
+
+<b> (\d+) is a regex that indicates any numeric character has 1 or more digits. </b> 
+
+# References
+
+* https://jex.im/regulex/#!flags=&re=%5E(a%7Cb)*%3F%24
