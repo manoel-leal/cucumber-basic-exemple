@@ -5,12 +5,6 @@
 	<groupId>br.com.mlpdleal</groupId>
 	<artifactId>CursoBDD</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	
-	<properties>
-	    <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
 
 	<dependencies>
 
@@ -18,12 +12,6 @@
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-java</artifactId>
 			<version>1.2.5</version>
-		</dependency>
-		<dependency>
-			<groupId>info.cukes</groupId>
-			<artifactId>cucumber-junit</artifactId>
-			<version>1.2.5</version>
-			<scope>test</scope>
 		</dependency>
 
 	</dependencies>
