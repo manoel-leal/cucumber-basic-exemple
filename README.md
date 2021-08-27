@@ -74,7 +74,19 @@ public class Runner {
 
 Regular Expression is a String pattern for generic expressions, example:
 
-<b> (\d+) is a regex that indicates any numeric character has 1 or more digits. </b> 
+**(\d+) is a regex that indicates any numeric character has 1 or more digits.**
+
+On Cucumber, for work with steps parameters, it need regex in steps String:
+
+```
+	@Entao("^o valor do contador deve ser (\\d+)$")
+	public void o_valor_do_contador_deve_ser(int arg1) throws Throwable {
+	   assertEquals(contador, arg1);
+	}
+
+```
+
+**Obs: Regular expression inicialize with ^ and end with ?**
 
 # References
 
