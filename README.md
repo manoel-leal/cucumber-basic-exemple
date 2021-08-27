@@ -46,3 +46,20 @@ Funcionalidade: Aprender Cucumber
 
 Obs: for change the gherkin's file language, in first line add the tag #language:<language_code>
 
+# Runner tests junit + cucumber
+
+For execute the tests we need create a class Runner that link the cucumber with junit execution
+
+```
+
+import org.junit.runner.RunWith;
+
+import cucumber.api.junit.Cucumber;
+
+@RunWith(Cucumber.class)
+public class Runner {
+	
+}
+
+
+```
