@@ -5,8 +5,10 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import cucumber.api.Transform;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
+import cucumber.api.java.pt.Então;
 import cucumber.api.java.pt.Quando;
 
 public class AprenderCucumber {
@@ -44,16 +46,12 @@ public class AprenderCucumber {
 	   assertEquals(contador, arg1);
 	}
 
-	@Dado("^que a entrega é dia (\\d+)/(\\d+)/(\\d+)$")
-	public void queAEntregaÉDia(int dia, int mes, int ano) {
-		Calendar cal = Calendar.getInstance();
-		cal.set(Calendar.DAY_OF_MONTH, dia);
-		cal.set(Calendar.MONTH, mes - 1);
-		cal.set(Calendar.YEAR, ano);
-		entrega = cal.getTime();
+	@Dado("^que a entrega é dia (.*)$")
+	public void queAEntregaÉDia(@Transform(DateConverter.class) Date data) {
+		entrega = data;
 	}
 
-	@Quando("^a entrega atrasar em (\\d+) (.+)$")
+	@Quando("^a entrega atrasar em (\\d+) (dia|dias|mes|meses)$")
 	public void aEntregaAtrasarEmDias(int qnd, String tempo) {
 		Calendar cal = Calendar.getInstance();
 		cal.setTime(entrega);
@@ -71,6 +69,35 @@ public class AprenderCucumber {
 		DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 		String dataFormatada = format.format(entrega);
 		assertEquals(data, dataFormatada);
+	}
+	
+	@Dado("^que o ticket( especial)? é (A.\\d{3})$")
+	public void queOTicketÉAF(String tipo, String arg1)  {
+
+	}
+
+	@Dado("^que o valor da passagem é R\\$ (.*)$")
+	public void queOValorDaPassagemÉR$(Double numero)  {
+		System.out.println(numero);
+	}
+
+	@Dado("^que o nome do passageiro é \"(.{5,20})\"$")
+	public void queONomeDoPassageiroÉ(String arg1) {
+
+	}
+
+	@Dado("^que o telefone do passageiro é (9\\d{3}-\\d{4})$")
+	public void queOTelefoneDoPassageiroÉ(String telefone) {
+	}
+
+	@Quando("^criar os steps$")
+	public void criarOsSteps(){
+
+	}
+
+	@Então("^o teste vai funcionar$")
+	public void oTesteVaiFuncionar() {
+	 
 	}
 
 
