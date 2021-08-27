@@ -1,6 +1,24 @@
 # selenium-cucumber-exemple
 A exemple test automation project with cucumber and selenium webdriver (Java). 
 
+# Requirements
+
+* Java 8 (jdk8)
+* Maven (mvn)
+* cucumber-java (info.cukes)
+* cucumber-junit (info.cukes)
+
+# Project config
+
+```
+	<properties>
+	    <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+```
+
 # Cucumber execution status
 
 * pending
